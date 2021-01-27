@@ -1,0 +1,492 @@
+/*
+1. Posicionamiento.
+2. Modelo de caja | Box model.
+3. Tipografía.
+4. Estilos visuales.
+5. Miscelanios u otros.
+*/
+
+:root {
+    /* Colores */
+    --bitcoin-orange: #F7931A;
+    --soft-orange: #FFE9D4;
+    --secondary-blue: #1A9AF7;
+    --soft-blue: #E7F5FF;
+    --warm-black: #201E1C;
+    --warm-black-light: #282623;
+    -grey: #BABABA;
+    --ofwhite: #FAF8F7;
+    --just-white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    font-family: 'DM Sans', sans-serif;
+}
+
+header {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-width: 320px;
+    /* Dimensión mas pequeña en los celulares*/
+    height: 334px;
+    text-align: center;
+    /* 207.8deg significa los grados | porcentaje del color negro | porcentaje del color naranja */
+    background: linear-gradient(207.8deg, #201E1C 16.69%, #F7931A 100%);
+}
+
+header img {
+    width: 150px;
+    height: 24px;
+    margin-top: 60px;
+    align-self: center;
+    /* La forma de centrar un elemento que tenga un contenedor con display: fkex */
+}
+
+header .header--tittle-container {
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    height: 218px;
+    margin-top: 40px;
+    text-align: center;
+    align-self: center;
+}
+
+.header--tittle-container h1 {
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+
+.header--tittle-container .header--description-text {
+    margin-top: 25px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--soft-orange);
+}
+
+.header--tittle-container .header--button {
+    position: absolute;
+    left: calc(50% - 114.5px);
+    /* alternativa 
+    	top: calc(100% - 24px);
+        left: calc(50% - 114.5px);
+        (sin margin-top)
+        usando transform:
+        top: 100%;
+	    left: 50%;
+	    transform: translate(-50%, -24px);
+    */
+    top: 270px;
+    margin-top: 35px;
+    display: block;
+    margin-top: 35px;
+    padding: 15px;
+    width: 229px;
+    height: 48px;
+    background-color: var(--ofwhite);
+    border-radius: 5px;
+    /* Sombra */
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--warm-black-light);
+}
+
+.header--button span {
+    /* Span por default viene inline */
+    display: inline-block;
+    width: 12px;
+    height: 8px;
+    margin-left: 10px;
+    background-image: url("./assets/icons/down-arrow.svg");
+}
+
+main {
+    width: 100%;
+    height: auto;
+    /* Auto ya que el mismo contenido va a 
+    definir el contenido del main */
+    background-color: var(--ofwhite);
+}
+
+main .exchange--container {
+    width: 100%;
+    padding-top: 80px;
+    height: auto;
+    padding-bottom: 30px;
+    text-align: center;
+    min-width: 320px;
+    max-width: 100%;
+}
+
+main .exchange--container-tittle {
+    width: 90%;
+    min-width: 288px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+main .exchange--container .exchange--container-backgroundImg {
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    background-image: url("../assets/img/bitcoin.svg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+main .exchange--container h2 {
+    margin-bottom: 30px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--warm-black-light);
+}
+
+main .exchange--container p {
+    margin-bottom: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6rem;
+    color: #757575;
+}
+
+.main__table-container {
+    height: 100%;
+    min-width: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main__table-container .main__table-tittle {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: var(--bitcoin-orange);
+    margin-bottom: 1rem
+}
+
+.main__table-container .main__grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 200px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    margin-bottom: 25px;
+}
+
+.main__table-container .main__grid-container .main__grid-child {
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter', sans-serif;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.4rem;
+    height: 40px;
+    margin: 0 auto;
+    color: var(--bitcoin-orange);
+}
+
+.main__table-container .main__grid-container .main__grid-child.value {
+    font-size: 1.4rem;
+    font-weight: normal;
+    color: #757575;
+    justify-content: space-between;
+}
+
+.main__grid-child-icon:nth-child(1) {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-left: 5px;
+    background-image: url('../assets/icons/trending-down.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.main-product-detail {
+    position: relative;
+    width: 100%;
+    min-width: 320px;
+    background: var(--warm-black);
+    height: auto;
+    /* arriba abajo - derecha izquierda*/
+    padding: 20px 10px;
+}
+
+.product-detail-batata-logo {
+    position: absolute;
+    background-image: url(../assets/icons/batata.svg);
+    width: 40px;
+    height: 25px;
+    top: -10px;
+    left: calc(50% - 20px);
+}
+
+.product-detail--tittle {
+    width: 90%;
+    min-width: 288px;
+    height: auto;
+    margin: 0 auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.product-detail--tittle h2 {
+    margin-bottom: 20px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white)
+}
+
+.product-detail--tittle p {
+    margin-bottom: 20px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: var(--just-white);
+}
+
+.product-detail--card {
+    width: 100%;
+    min-width: 288px;
+    min-height: auto;
+    max-width: 400px;
+    height: 150px;
+    margin: 15px auto;
+    padding: 15px;
+    background-color: var(--warm-black-light);
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .16);
+}
+
+.product-detail--card .clock {
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-bottom: 10px;
+    background-image: url('../assets/icons/clock.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.product-card-tittle {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--just-white)
+}
+
+.product-card-body {
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+    /* ancho */
+    font-weight: 500;
+    /* altura */
+    line-height: 1.8rem;
+    color: #808080;
+}
+
+.product-detail--card .dollar {
+    background-image: url('../assets/icons/dollar-sign.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-bottom: 10px;
+}
+
+.product-detail--card .check {
+    background-image: url('../assets/icons/check-circle.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-bottom: 10px;
+}
+
+.product-detail--card .eyes {
+    background-image: url('../assets/icons/eye.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin-bottom: 10px;
+}
+
+.bitcoin-img-container {
+    width: 100%;
+    min-width: 320px;
+    height: 50vh;
+    background-image: url('../assets/img/bitcoinbaby2x.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+}
+
+.bitcoin-img-container h2 {
+    padding-top: 60px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--just-white);
+}
+
+.main-plans-container {
+    width: 100%;
+    min-height: 320px;
+    padding-bottom: 70px;
+    text-align: center;
+}
+
+.main-plans-container h2 {
+    padding-top: 50px;
+    font-size: 2.4rem;
+    font-weight: bold;
+    line-height: 2.6rem;
+    color: var(--black);
+}
+
+.main-plans-container p {
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: #757575;
+}
+
+.plans-container--slider {
+    display: flex;
+    /* gap: 50px; Aun no está soportado por todos los navegadores :( */
+    height: 316px;
+    overflow-x: scroll;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x proximity;
+}
+
+.plans-container--card {
+    position: relative;
+    scroll-snap-align: center;
+    width: 70%;
+    min-width: 230px;
+    max-width: 300px;
+    height: 250px;
+    margin: 50px 30px 0;
+    padding: 0 15px;
+    background-color: var(--just-white);
+    border-radius: 15px;
+    box-shadow: 0px 4px 8px rgba(89, 73, 30, 0.16);
+}
+
+.plans-container--card .recommended {
+    position: absolute;
+    width: 120px;
+    height: 31px;
+    left: calc(50% - 60px);
+    top: -15px;
+    margin: 0;
+    padding: 6px;
+    background-color: var(--bitcoin-orange);
+    border-radius: 8px;
+    color: var(--just-white);
+}
+
+.plan-card--title {
+    padding-top: 30px;
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    color: black;
+}
+
+.plans-container--card .plan-card--price {
+    padding: 5px 0;
+    font-size: 5.3rem;
+    font-weight: bold;
+    line-height: 6.3rem;
+    color: black;
+}
+
+.plans-container--card .plan-card--saving {
+    padding-top: 0;
+}
+
+.plan-card--ca {
+    width: 151px;
+    height: 48px;
+    margin-top: 20px;
+    background: var(--off-white);
+    border: 2px solid var(--bitcoin-orange);
+    border-radius: 4px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    color: var(--black);
+}
+
+.plan-card--ca span {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    background-image: url("../assets/icons/orange-right-arrow.svg");
+    vertical-align: text-bottom;
+}
+
+footer {
+    display: flex;
+    width: 100%;
+    height: 150px;
+    background-color: var(--bitcoin-orange);
+}
+
+footer section {
+    display: flex;
+    width: 50%;
+    justify-content: center;
+    align-items: center;
+}
+
+footer .left-footer ul {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.8rem;
+    list-style: none;
+}
+
+footer .left-footer li {
+    margin: 10px 0;
+}
+
+footer .left-footer a {
+    text-decoration: none;
+    color: var(--just-white);
+}
